@@ -1,0 +1,456 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+/* Estilos generales del header */
+header {
+    background-color: #333;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo del menú */
+ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+ul.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+ul.menu li a:hover {
+    background-color: #555;
+}
+
+/* Icono de hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    ul.menu {
+        display: none; /* Ocultar el menú en pantallas pequeñas */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Coloca el menú debajo del header */
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    ul.menu.show {
+        display: flex; /* Mostrar el menú cuando la clase 'show' está activa */
+    }
+
+    .hamburger {
+        display: flex; /* Mostrar el icono de hamburguesa en móviles */
+    }
+}
+
+
+/* Inicio */
+.container-inicio {
+    background-image: url('../images/setup.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 93vh;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.inicio h1{
+    color: #ffffff;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    color: #ffffff;
+    background-color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.container-inicio button:hover {
+    background-color: #c0c0c0;
+}
+
+/* Presentación */
+.container-presentacion {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.presentacion {
+    width: 50%;
+    text-align: center;
+}
+
+.presentacion h2 {
+    color: #000000;
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+
+.presentacion p {
+    color: #000000;
+    font-size: 1.5rem;
+}
+
+.presentacion a {
+    color: #868686;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.img-presentacion {
+    width: 50%;
+    text-align: center;
+}
+
+.img-presentacion img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Servicios */
+.container-servicios {
+    background-color: #eef1ef;
+    padding: 50px;
+    text-align: center;
+}
+
+.servicios {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.servicio a {
+    text-decoration: none;
+}
+
+.servicio {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.servicio:hover {
+    transform: scale(1.15);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.servicio img {
+    height: 120px;
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.servicio h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 15px 0;
+}
+
+.servicio p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Estilos generales para el formulario */
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    background-color: #f4f7f6;
+    padding: 20px;
+}
+
+form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px; /* Limita el ancho máximo */
+    transition: all 0.3s ease;
+}
+
+/* Título */
+form h2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilos de los campos de entrada y texto */
+form label {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    box-sizing: border-box;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #000000;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilo del botón de envío */
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2e343a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #4e4e4e;
+}
+
+/* Estilos para el mensaje de estado */
+#form-status {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#form-status p {
+    margin: 0;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#form-status p.success {
+    color: #28a745; /* Verde */
+}
+
+#form-status p.error {
+    color: #dc3545; /* Rojo */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container-form {
+        padding: 10px;
+    }
+
+    form {
+        padding: 30px;
+        width: 100%;
+        max-width: 90%;
+    }
+
+    form h2 {
+        font-size: 1.8rem;
+    }
+
+    form button {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #c2c203;
+    transform: scale(1.1);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container-inicio {
+        flex-direction: column;
+        height: auto;
+        background-attachment: scroll;
+    }
+
+    .img-presentacion {
+        order: -1;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .img-presentacion img {
+        width: 80%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .container-inicio h2 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .container-presentacion {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .presentacion {
+        width: 100%;
+    }
+
+    .img-presentacion {
+        width: 100%;
+    }
+
+    .servicios {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .servicio {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .footer-content {
+        gap: 15px;
+    }
+
+    .social-links a {
+        font-size: 1.2rem;
+    }
+}
